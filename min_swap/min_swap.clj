@@ -16,6 +16,8 @@
 
 (is-pair-of 3 1 input-pair)
 
+(rest input-arr)
 
-(let [x 0]
-  )
+(defn [input-arr input-pair m]
+  (if (is-pair-of (first input-arr) (second input-arr))
+    (recur (drop 2 input-arr) input-pair 20)))
