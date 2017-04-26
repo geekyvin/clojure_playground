@@ -19,5 +19,13 @@
 (rest input-arr)
 
 (defn [input-arr input-pair m]
-  (if (is-pair-of (first input-arr) (second input-arr))
-    (recur (drop 2 input-arr) input-pair 20)))
+  (if (is-pair-of (first input-arr) (second input-arr) input-pair)
+    (recur (drop 2 input-arr) input-pair 20)
+    ))
+
+;;http://www.geeksforgeeks.org/minimum-number-of-swaps-required-for-arranging-pairs-adjacent-to-each-other/
+
+(defn swaper [input-arr]
+(if (is-pair-of (first input-arr) (second input-arr))
+  (recur (drop 2 input-arr))
+  (inc (min () ) )
