@@ -6,12 +6,15 @@
   (if (= a 1) 0 (inc c)))
 
 (defn binary-gap [n]
-  (apply max (reductions counter 0 (get-binary-list n))))
+  (let [r (max (map count (re-seq #"10+(?=1)" (apply str (get-binary-list n)))))]
+    (if (empty? r) 0 (dec (first r)))))
 
 (binary-gap 15)
-  
+
 (binary-gap 4)
 
 (binary-gap 9)
 
 (binary-gap 20)
+
+(binary-gap 1041)
