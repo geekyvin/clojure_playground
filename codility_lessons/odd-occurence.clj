@@ -5,5 +5,4 @@
 (defn odd-occurence [A]
   (key (reduce #(if (= (val %1) 1) %1 %2) (frequencies A))))
 
-
 (odd-occurence A)
