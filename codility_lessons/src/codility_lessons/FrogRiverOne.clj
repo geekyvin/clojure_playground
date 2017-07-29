@@ -30,20 +30,16 @@
 
 (test_for [1 2 3 4])
 
-(defn test_loop [A]
-  (let [B []]
-    (loop [x (count A)]
-      (let [B (conj B x)]))))
+(defn test_loop [A x]
+  (let [A' (vec (range 0 (inc x)))]
+    (loop [i 0
+           B (conj [] (first A))]
+          (if (or (= A' (sort B)) (< i 10))
+            i
+            (recur (inc i) (conj B A[i]))))))
 
-(test_loop [1 2 3 4])
+(test_loop [3 1 4 2 3 5 4] 5)
 
-(loop [x 10]
-  (when (> x 1)
-    (println x)
-    (recur (- x 2))))
+()
 
-
-(defn for_loop [A x]
-  (let [path (int-array x)]
-    (for [i A]
-        (into))))
+()
