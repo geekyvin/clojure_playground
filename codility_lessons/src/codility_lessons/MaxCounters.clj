@@ -6,15 +6,7 @@
         (recur
           (inc i)
           (assoc C
-            (min m (nth A i))
-            (inc (nth C i)))))))
+            (nth A i)
+            (min n (inc (nth C (nth A i)))))))))
 
 (max-counters 7 [3 4 4 6 4 4 1] 5)
-
-A[0] = 3
-A[1] = 4
-A[2] = 4
-A[3] = 6
-A[4] = 4
-A[5] = 4
-A[6] = 1
